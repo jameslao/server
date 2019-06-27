@@ -26,7 +26,7 @@ namespace OCP\Security\CSP;
 
 use OC\Security\CSP\ContentSecurityPolicyManager;
 use OCP\AppFramework\Http\EmptyContentSecurityPolicy;
-use Symfony\Component\EventDispatcher\Event;
+use OCP\EventDispatcher\Event;
 
 /**
  * @since 17.0.0

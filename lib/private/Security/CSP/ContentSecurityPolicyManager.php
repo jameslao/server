@@ -25,18 +25,18 @@ namespace OC\Security\CSP;
 
 use OCP\AppFramework\Http\ContentSecurityPolicy;
 use OCP\AppFramework\Http\EmptyContentSecurityPolicy;
+use OCP\EventDispatcher\IEventDispatcher;
 use OCP\Security\CSP\AddContentSecurityPolicyEvent;
 use OCP\Security\IContentSecurityPolicyManager;
-use Symfony\Component\EventDispatcher\EventDispatcherInterface;
 
 class ContentSecurityPolicyManager implements IContentSecurityPolicyManager {
 	/** @var ContentSecurityPolicy[] */
 	private $policies = [];
 
-	/** @var EventDispatcherInterface */
+	/** @var IEventDispatcher */
 	private $dispatcher;
 
-	public function __construct(EventDispatcherInterface $dispatcher) {
+	public function __construct(IEventDispatcher $dispatcher) {
 		$this->dispatcher = $dispatcher;
 	}
 

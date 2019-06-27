@@ -23,6 +23,7 @@ namespace Test\Security\CSP;
 
 
 use OC\Security\CSP\ContentSecurityPolicyManager;
+use OCP\EventDispatcher\IEventDispatcher;
 use OCP\Security\CSP\AddContentSecurityPolicyEvent;
 use PHPUnit\Framework\MockObject\MockObject;
 use Symfony\Component\EventDispatcher\EventDispatcher;
@@ -38,7 +39,7 @@ class ContentSecurityPolicyManagerTest extends TestCase {
 
 	public function setUp() {
 		parent::setUp();
-		$this->dispatcher = new EventDispatcher();
+		$this->dispatcher = \OC::$server->query(IEventDispatcher::class);
 		$this->contentSecurityPolicyManager = new ContentSecurityPolicyManager($this->dispatcher);
 	}
 
